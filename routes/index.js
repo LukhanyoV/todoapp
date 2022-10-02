@@ -30,7 +30,7 @@ module.exports = service => {
                 note
             }
             await service.editNote(updateNote)
-            res.render("/")
+            res.redirect("/")
         }
     }
 }
