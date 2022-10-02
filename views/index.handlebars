@@ -1,0 +1,26 @@
+<h2>Todo App</h2>
+
+<h3>Add Note</h3>
+<form action="/add" method="post">
+    <input type="text" name="note">
+    <button type="submit">add note</button>
+</form>
+
+{{#if notes}}
+<ul>
+    {{#each notes}}
+    <li>
+        {{note}}
+        <form action="/remove" method="post">
+            <input type="hidden" name="key" value="{{key}}">
+            <button type="submit">x</button>
+        </form>
+        <a href="/edit/{{key}}">edit</a>
+    </li>
+    {{/each}}
+</ul>
+{{/if}}
+
+{{#unless notes}}
+<p>No notes in the database</p>
+{{/unless}}
