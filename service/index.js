@@ -4,8 +4,8 @@ module.exports = db => {
             await db.put(note)
         },
         editNote: async note => {
-            await removeNote(note.key)
-            await addNote(note)
+            await this.removeNote(note.key)
+            await this.addNote(note)
         },
         getNote: async key => {
             return await db.get(key)
